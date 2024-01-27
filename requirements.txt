@@ -1,0 +1,28 @@
+# Backend Dependencies
+Flask==2.0.1
+Flask-CORS==3.0.10
+tensorflow==2.5.0
+google-cloud-vision==2.0.0
+# Frontend Dependencies
+@tensorflow/tfjs==4.2.0
+bootstrap@5.3.0
+react==17.0.2
+react-bootstrap==2.0.0
+react-dom==17.0.2
+react-scripts==4.0.3
+react-webcam==5.0.3
+axios==0.24.0
+
+# Backend Dependencies:
+Flask and Flask-CORS: For creating a web server and handling cross-origin resource sharing.
+tensorflow: For the machine learning model in the backend.
+google-cloud-vision: For interacting with the Google Cloud Vision API.
+
+# Frontend Dependencies:
+
+@tensorflow/tfjs: TensorFlow.js for running machine learning models in the browser.
+bootstrap: CSS framework for styling the frontend.
+react, react-bootstrap, react-dom, react-scripts: React and related libraries for building the frontend.
+react-webcam: React component for capturing images from the webcam.
+axios: HTTP client for making requests from the frontend to the backend.
+Make sure to run npm install in the frontend/medicinal-app directory to install the Node.js dependencies for the React frontend.
