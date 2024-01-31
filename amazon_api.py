@@ -1,6 +1,5 @@
 # medicinal_image_recognition/amazon_api.py
 import boto3
-
 def analyze_image(image_path):
     # Replace 'your-access-key-id', 'your-secret-access-key', and 'your-aws-region' with your AWS credentials
     aws_access_key_id = 'your-access-key-id'
@@ -32,9 +31,7 @@ def get_medicinal_value(label):
         'Herb3': 'Medium',
         # Add more labels and medicinal values as needed
     }
-
     return medicinal_values.get(label, 'Unknown')
-
 # Example usage
 if __name__ == "__main__":
     # Replace 'path/to/your/image.jpg' with the path to your image

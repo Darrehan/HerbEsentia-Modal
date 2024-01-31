@@ -12,14 +12,11 @@ react-dom==17.0.2
 react-scripts==4.0.3
 react-webcam==5.0.3
 axios==0.24.0
-
 # Backend Dependencies:
 Flask and Flask-CORS: For creating a web server and handling cross-origin resource sharing.
 tensorflow: For the machine learning model in the backend.
 google-cloud-vision: For interacting with the Google Cloud Vision API.
-
 # Frontend Dependencies:
-
 @tensorflow/tfjs: TensorFlow.js for running machine learning models in the browser.
 bootstrap: CSS framework for styling the frontend.
 react, react-bootstrap, react-dom, react-scripts: React and related libraries for building the frontend.

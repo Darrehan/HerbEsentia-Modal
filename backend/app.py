@@ -5,13 +5,10 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 import os
-
 app = Flask(__name__)
 CORS(app)
-
 # Load the trained model
 model = load_model('trained_models/medicinal_model.h5')
-
 # Define image preprocessing function
 def preprocess_image(image_path):
     img = Image.open(image_path)

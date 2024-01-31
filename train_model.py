@@ -4,15 +4,12 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.model_selection import train_test_split
 from pathlib import Path
 import os
-
 # Load and preprocess images using ImageDataGenerator
 data_path = Path('dataset')
 image_generator = ImageDataGenerator(rescale=1./255)
-
 # Assuming binary classification (medicinal or non-medicinal)
 images = []
 labels = []
-
 # Debugging: Print the list of files found
 for category in ['plants', 'leaves']:
     category_path = data_path / category
@@ -85,4 +82,5 @@ test_accuracy = model.evaluate(test_data_generator)
 print('Test Accuracy:', test_accuracy[1])
 
 # Save the model
-model.save('trained_models/medicinal_model.h5')
+model.save('trained_models')
+
