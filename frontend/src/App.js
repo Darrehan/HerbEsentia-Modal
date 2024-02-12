@@ -1,10 +1,10 @@
 // src/App.js
+import "./App.css"
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 axios.defaults.maxBodyLength = 50 * 1024 * 1024; // 50 MB (change as needed)
 
 const App = () => {
@@ -31,16 +31,17 @@ const App = () => {
   };
 
   return (
-    <Container>
-      <h1 className="mt-4">Medicinal Image Recognition</h1>
+    <Container className='gradient-background'>
+      <h1 style={{textAlign:"center",color:"yellow"}} className="mt-4">MedicinalPlant Recognition with Agrotech</h1>
+      
       <Row className="mt-4">
-        <Col>
+        <Col >
           <Webcam
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
           />
-          <Button variant="primary" className="mt-2" onClick={capture}>
+          <Button    variant="primary" className="mt-2" onClick={capture}>
             Capture
           </Button>
         </Col>
