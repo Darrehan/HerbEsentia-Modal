@@ -5,11 +5,12 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 import os
+from amazon_api import call_aws_rekognition  # Import the AWS API call function
+
 app = Flask(__name__)
 CORS(app)
-# Load the trained model
-model = load_model('trained_models/medicinal_model.h5')
-# Define image preprocessing function
+model = load_model(r'D:\HerbEsentia\HerbEsentia Modal\trained_models\plant_classification_model.h5')
+
 def preprocess_image(image_path):
     img = Image.open(image_path)
     img = img.resize((224, 224))
@@ -20,19 +21,18 @@ def preprocess_image(image_path):
 @app.route('/api/predict', methods=['POST'])
 def predict():
     try:
-        # Get the image from the request
         image = request.files['image']
         image_path = 'temp.jpg'
         image.save(image_path)
-
-        # Preprocess the image
         processed_image = preprocess_image(image_path)
-
-        # Make prediction
         prediction = model.predict(processed_image)[0][0]
 
-        # Return the result
-        return jsonify({'result': 'medicinal' if prediction > 0.5 else 'non-medicinal'})
+        # Call AWS Rekognition for additional labels
+        aws_labels = call_aws_rekognition(image_data=request.form['imageData'])
+        # Combine the model prediction and AWS Rekognition labels
+        result_labels = ['medicinal' if prediction > 0.5 else 'non-medicinal'] + aws_labels
+
+        return jsonify({'result_labels': result_labels})
 
     except Exception as e:
         return jsonify({'error': str(e)})

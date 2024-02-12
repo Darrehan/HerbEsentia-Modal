@@ -1,0 +1,41 @@
+# Create by https://www.gitignore.io/api/node
+
+### Node ###
+# Logs
+logs 
+*.log
+npm-debug.log*
+
+#Dependency Directory
+node_modules
+
+#Option npm cache Directory
+.npm
+
+#Oprional REPL history
+.node_repl_history
+
+.vscode
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
